@@ -1,15 +1,14 @@
 import { View, Text } from "react-native";
+import RootNavigation from "./navigation";
+import { NativeBaseProvider } from "native-base";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 export default function App() {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Universal React with Expo</Text>
-    </View>
+    <NativeBaseProvider>
+      <SafeAreaProvider>
+        <RootNavigation />
+      </SafeAreaProvider>
+    </NativeBaseProvider>
   );
 }
